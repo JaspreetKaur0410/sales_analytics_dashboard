@@ -31,7 +31,7 @@ def view_all_data():
     conn =  pymysql.connect(host=ENDPOINT, user=USER, passwd=PASSWORD, port=PORT, database=DBNAME, ssl_ca='SSLCERTIFICATE')
     cur = conn.cursor()
     cur.execute("""select * from insurance order by id asc""")
-    query_results = cur.fetchall()
+    query_results = [dict((cur.description[i][0], value) for i, value in enumerate(row)) for row in cur.fetchall()]
     print(query_results)
     return query_results
     
