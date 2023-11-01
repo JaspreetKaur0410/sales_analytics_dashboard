@@ -1,4 +1,3 @@
-﻿from turtle import color
 from altair import Orientation
 import streamlit as st
 import pandas as pd
