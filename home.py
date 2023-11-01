@@ -18,7 +18,7 @@ st.markdown("##")
 results=view_all_data()
 df=pd.DataFrame(results)
 print(df)
-st.dataframe(df)
+# st.dataframe(df)
 
 #side bar
 st.sidebar.image("pictures/logo1.png", caption="online Analytics")
