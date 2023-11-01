@@ -1,4 +1,4 @@
-mysqlclient==2.2.0
+mysqlclient
 SQLAlchemy==2.0.22
 mysql-connector-python==8.1.0
 pandas==2.1.1
