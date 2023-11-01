@@ -10,9 +10,9 @@ USER="admin"
 REGION="us-east-1"
 DBNAME="analytics_db"
 PASSWORD="Ja1sitaram"
-os.environ['LIBMYSQL_ENABLE_CLEARTEXT_PLUGIN'] = '1'
+# os.environ['LIBMYSQL_ENABLE_CLEARTEXT_PLUGIN'] = '1'
 
-#gets the credentials from .aws/credentials
+# gets the credentials from .aws/credentials
 # session = boto3.Session(profile_name='default')
 # client = session.client('rds')
 
