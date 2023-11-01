@@ -154,6 +154,9 @@ hide_st_style="""
 }
 footer {visibility:hidden;}
 header {visibility:hidden;}
+#GithubIcon {
+  visibility: hidden;
+}
 </style>
 """
 
