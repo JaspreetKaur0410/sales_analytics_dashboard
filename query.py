@@ -13,13 +13,13 @@ PASSWORD="Ja1sitaram"
 os.environ['LIBMYSQL_ENABLE_CLEARTEXT_PLUGIN'] = '1'
 
 #gets the credentials from .aws/credentials
-session = boto3.Session(profile_name='default')
-client = session.client('rds')
+# session = boto3.Session(profile_name='default')
+# client = session.client('rds')
 
 token = client.generate_db_auth_token(DBHostname=ENDPOINT, Port=PORT, DBUsername=USER, Region=REGION)
 
 try:
-    conn =  pymysql.connect(host=ENDPOINT, user=USER, passwd=token, port=PORT, database=DBNAME, ssl_ca='SSLCERTIFICATE')
+    conn =  pymysql.connect(host=ENDPOINT, user=USER, passwd=PASSWORD, port=PORT, database=DBNAME, ssl_ca='SSLCERTIFICATE')
     cur = conn.cursor()
     cur.execute("""SELECT now()""")
     query_results = cur.fetchall()
@@ -28,7 +28,7 @@ except Exception as e:
     print("Database connection failed due to {}".format(e))               
 
 def view_all_data():
-    conn =  pymysql.connect(host=ENDPOINT, user=USER, passwd=token, port=PORT, database=DBNAME, ssl_ca='SSLCERTIFICATE')
+    conn =  pymysql.connect(host=ENDPOINT, user=USER, passwd=PASSWORD, port=PORT, database=DBNAME, ssl_ca='SSLCERTIFICATE')
     cur = conn.cursor()
     cur.execute("""SELECT now()""")
     query_results = cur.fetchall()
