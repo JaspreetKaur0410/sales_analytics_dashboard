@@ -4,12 +4,12 @@ import sys
 import boto3
 import os
 
-ENDPOINT="database-2.cuzlxxs7vcah.us-east-1.rds.amazonaws.com"
-PORT=3306
-USER="admin"
-REGION="us-east-1"
-DBNAME="analytics_db"
-PASSWORD="Ja1sitaram"
+ENDPOINT= st.secrets["ENDPOINT"])
+PORT=st.secrets["PORT"])
+USER=st.secrets["USER"])
+REGION=st.secrets["REGION"])
+DBNAME=st.secrets["DBNAME"])
+PASSWORD=st.secrets["PASSWORD"])
 # os.environ['LIBMYSQL_ENABLE_CLEARTEXT_PLUGIN'] = '1'
 
 # gets the credentials from .aws/credentials
